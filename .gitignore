@@ -1,0 +1,13 @@
+.gradle
+*.jar
+*.war
+*.class
+*.classpath
+*.project
+*.setting
+.DS_Store
+bin/
+build/
+logs/
+gradlew*
+

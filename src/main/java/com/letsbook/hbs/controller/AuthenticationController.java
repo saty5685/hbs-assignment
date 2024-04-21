@@ -29,11 +29,14 @@ public class AuthenticationController {
 
     @PostMapping("/login")
     public ResponseEntity<String> loginUser(@RequestBody LoginRequest loginRequest) {
-        User user = userService.findByUsername(loginRequest.getUsername());
+    	System.out.println(loginRequest.getUserName());
+        User user = userService.findByUserName(loginRequest.getUserName());
+        System.out.println(user.toString());
         if (user != null && user.getPassword().equals(loginRequest.getPassword())) {
             String token = jwtTokenUtil.generateJwtToken(user);
             HttpHeaders headers = new HttpHeaders();
             headers.add("Authorization", "Bearer " + token);
+            System.out.println(token);
             return  ResponseEntity.ok().headers(headers).body("Login Success");
         } else {
         	return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");

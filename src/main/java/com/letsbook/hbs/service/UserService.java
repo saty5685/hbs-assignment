@@ -7,6 +7,6 @@ import com.letsbook.hbs.model.User;
 
 public interface UserService {
     User registerUser(User user);
-    User findByUsername(String username);
+    User findByUserName(String username);
     User authenticateUser(String username, String password);
 }

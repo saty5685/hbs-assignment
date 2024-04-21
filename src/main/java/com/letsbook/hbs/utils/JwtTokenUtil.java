@@ -2,6 +2,7 @@ package com.letsbook.hbs.utils;
 
 import java.util.Date;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import com.letsbook.hbs.model.User;
@@ -13,12 +14,11 @@ import io.jsonwebtoken.impl.TextCodec;
 @Component
 public class JwtTokenUtil {
 
-//    @Value("${jwt.secret}")
-//    private String secret;
+    @Value("${jwt.secret}")
+    private String secret;
 //
 //    @Value("${jwt.expiration}")
 //    private int expiration;
-	private String secret="HRlELXqpSB";
 	private int expiration=3600;
     public String generateJwtToken(User user) {
         return Jwts.builder()

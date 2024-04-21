@@ -1,7 +1,5 @@
 package com.letsbook.hbs.service;
 
-import org.springframework.stereotype.Component;
-
 import com.letsbook.hbs.model.User;
 
 
